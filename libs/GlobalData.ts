@@ -35,14 +35,13 @@ export const generateInvoicePDF = (invoiceData: InvoiceForm) => {
     item.amount,
   ]);
 
-  // ✅ Use the imported autoTable function, not doc.autoTable
   autoTable(doc, {
     head: [tableColumn],
     body: tableRows,
     startY: 45,
   });
 
-  const finalY = (doc as any).lastAutoTable?.finalY || 60; // optional chaining
+  const finalY = (doc as any).lastAutoTable?.finalY || 60;
 
   doc.text(
     `Total: ${invoiceData.totalAmount.toLocaleString("en-IN")}`,

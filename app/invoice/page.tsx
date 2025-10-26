@@ -163,13 +163,13 @@ function InvoicePage() {
       <form onSubmit={handleSubmit(onSubmit)} className="w-full flex flex-col gap-12">
         <div className="w-full justify-between items-center flex gap-8">
           <Controller
-            name="customerName" // RHF field for selected customer
+            name="customerName"
             control={control}
             render={({ field }) => (
               <GlobalSelectComp
                 {...field}
                 heading="Select Customer"
-                item={customers.map((c) => c.customerName)} // from CustomersContext
+                item={customers.map((c) => c.customerName)} 
               />
             )}
           />

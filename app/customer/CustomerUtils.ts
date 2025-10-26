@@ -9,5 +9,4 @@ export const customerSchema = z.object({
     .max(100, "Discount cannot exceed 100"))
 });
 
-// Infer TypeScript type
 export type CustomerFormData = z.infer<typeof customerSchema>;
